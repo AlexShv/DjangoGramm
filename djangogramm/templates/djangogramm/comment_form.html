@@ -1,0 +1,13 @@
+{% extends 'djangogramm/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<form class="m-2" method="post" novalidate>
+		<h2>Add comment</h2>
+		{% csrf_token %}
+		<div class="form-group col-md-6 mb-0">
+        	{{ form.description|as_crispy_field }}
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'djangogramm/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="post-container bg-white p-4 rounded shadow">
+            <div class="user-info">
+                <p><a href="{% url 'profile' username=post.user_id %}" class="text-primary">{{ post.user_id }}</a></p>
+                <p class="text-muted">Posted on {{ post.created_at }}</p>
+                <p class="reaction-count">
+                    <span class="badge bg-primary likes-count">Likes: {{ likes_count }}</span>
+                    <span class="badge bg-secondary dislikes-count">Dislikes: {{ dislikes_count }}</span>
+                </p>
+            </div>
+            <div class="post-content">
+                <h1 class="text-center mb-4"><b>{{ post.title }}</b></h1>
+                <div class="post-images">
+                    {% for photo in post.photo_set.all %}
+                        <img src="{{ photo.image.url }}" alt="{{ post.title }} Image" width="200">
+                    {% endfor %}
+                </div>
+                <p>{{ post.content|safe|linebreaksbr }}</p>
+            </div>
+            <div class="reaction-buttons mt-3">
+                <form action="{% url 'react_post' post.pk %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button class="btn btn-primary like-button" data-post-id="{{ post.id }}" data-reaction-type="like">👍 Like</button>
+                </form>
+                <form action="{% url 'react_post' post.pk %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button class="btn btn-secondary dislike-button" data-post-id="{{ post.id }}" data-reaction-type="dislike">👎 Dislike</button>
+                </form>
+            </div>
+            <hr>
+            <div class="comments-section">
+                <h2 class="mt-4">Comments:</h2>
+                {% if comments %}
+                    {% for comment in comments %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <p class="card-text">{{ comment.author }} ({{ comment.created_at }}) - {{ comment.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted">There have been no comments here yet</p>
+                {% endif %}
+            </div>
+            <a href="{% url 'add_comment' post.id %}" class="btn btn-primary">Add Comment</a>
+            <a href="{% url 'home' %}" class="btn btn-secondary float-end">Back to Home</a>
+        </div>
+    </div>
+{% endblock %}

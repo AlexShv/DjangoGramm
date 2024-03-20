@@ -1,0 +1,54 @@
+{% extends 'djangogramm/base.html' %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mt-4 col-left">
+                {% for post in posts %}
+                    <div class="card border mb-5">
+                        <div class="card-header"><h3>{{ post.title }}</h3></div>
+                        <div class="card-content">
+                            {% if post.title_image %}
+                                <p><img src="{{ post.title_image.url }}" height="345" width="525"></p>
+                                {{ post.content|truncatewords:15 }}
+                            {% else %}
+                                {{ post.content|truncatewords:15 }}
+                            {% endif %}
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'post_detail' post_id=post.id %}" class="btn btn-primary">Read</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-4 col-right">
+                <div id="people-worth-following">
+                    <div class="border p-4 mt-4 people-worth-following">
+                        <h2 class="text-center">People worth following:</h2>
+                        <ul class="list-group text-center">
+                            {% for user in recommended_users %}
+                                <li class="list-group-item d-flex justify-content-center align-items-center">
+                                    <div class="ms-2 d-flex flex-column align-items-center" style="width: 70px; height: 70px; position: relative;">
+                                        {% if user.avatar %}
+                                            <img src="{{ user.avatar.url }}" alt="User photo" class="img-fluid img-thumbnail" style="max-height: 60px; max-width: 60px; border-radius: 50%; position: absolute; bottom: 0;">
+                                        {% else %}
+                                            <i class="fa-regular fa-user fa-lg" style="color: #808080; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px;"></i>
+                                        {% endif %}
+                                    </div>
+                                    <div class="text-center" style="flex: 1; margin-left: 5px;">
+                                        <a href="{% url 'profile' username=user.username %}" class="text-primary">{{ user.username }}</a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

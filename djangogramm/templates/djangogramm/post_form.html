@@ -1,0 +1,27 @@
+{% extends 'djangogramm/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <section class="vh-10">
+        <div class="container py-5 h-1">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                        <div class="card-body text-center">
+                            <h2 class="fw-bold mb-2 text-uppercase">Create/Update Post</h2>
+                            <p class="text-white-50 mb-5">Please, enter your post information</p>
+                            <form class="form-with-margin my-custom-form" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.title|as_crispy_field }}
+                                {{ form.content|as_crispy_field }}
+                                {{ form.title_image|as_crispy_field }}
+                                {{ form.images|as_crispy_field }}
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

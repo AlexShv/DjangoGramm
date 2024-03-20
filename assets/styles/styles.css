@@ -1,0 +1,104 @@
+.icon-text {
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  font-size: 18px;
+  margin: 0 auto;
+  color: #808080;
+}
+
+.text {
+  text-align: center;
+}
+
+.profile-image {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.profile-image-container {
+    position: relative;
+}
+
+.follower-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.profile-bio {
+    margin-top: 20px;
+}
+
+.user-posts {
+    margin-top: 20px;
+}
+
+
+.my-custom-form {
+    padding: 10px;
+    border-radius: 1rem;
+}
+
+.my-custom-form input[type="text"],
+.my-custom-form input[type="email"],
+.my-custom-form input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.col-left {
+    margin-left: 40px;
+}
+
+.col-right {
+    margin-left: 180px;
+}
+
+.back-to-home-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-to-home-button:hover {
+    background-color: #0056b3;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.not_register {
+    margin-top: 50px;
+}
+
+.already_login {
+    margin-top: 50px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-group-item img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
