@@ -1,5 +1,5 @@
 from django.test import TestCase
-from djangogramm.models import *
+from ..models import *
 
 
 # Тести для моделі Post
