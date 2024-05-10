@@ -1,5 +1,5 @@
 from django.test import TestCase
-from djangogramm.forms import *
+from ..forms import *
 
 
 # Тести для форми Post
