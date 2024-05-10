@@ -257,7 +257,7 @@ def add_comment(request, post_id):
     else:
         form = CommentForm()
 
-    return render(request, 'djangogramm/comment_form.html', {'form': form})
+    return render(request, 'djangogramm/comment_form.html', {'form': form, 'title': 'Add Comment'})
 
 
 # Функція для виставлення реакцій для посту
