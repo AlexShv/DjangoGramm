@@ -1,16 +1,121 @@
+body {
+    background-color: #dfdfdf;
+}
+
+.name-forum,
+.name-forum-active {
+    color: #fff;
+    font-family: "Sedan SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.name-forum {
+    padding-right: 800px;
+}
+
+.text-primary {
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.image-text {
+    margin-left: 30px;
+}
+
+.fa-regula,
+.fa-lg {
+    color: #808080;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+.notimg-user {
+    position: static;
+    margin: 20px;
+    height: 12px;
+}
+
+.main-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logout-info {
+    font-size: 50px;
+    border: #212529 solid 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.main-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.post-delete {
+    width: 500px;
+    height: 300px;
+    color: #fff;
+    background-color: #212529;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.title-delete {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.text-delete {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.btn-delete {
+    margin-right: 250px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: #fff solid 1px;
+    border-radius: 15px;
+}
+
+.btn-delete:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.cancel-delete {
+    font-size: 20px;
+    text-decoration: none;
+}
+
 .icon-text {
-  text-align: center;
+    text-align: center;
 }
 
 .icon {
-  display: block;
-  font-size: 18px;
-  margin: 0 auto;
-  color: #808080;
+    display: block;
+    font-size: 18px;
+    margin: 0 auto;
+    color: #808080;
 }
 
 .text {
-  text-align: center;
+    text-align: center;
 }
 
 .profile-image {
@@ -35,7 +140,6 @@
 .user-posts {
     margin-top: 20px;
 }
-
 
 .my-custom-form {
     padding: 10px;
@@ -77,10 +181,10 @@
 
 .divider:after,
 .divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
 }
 
 .not_register {
@@ -92,13 +196,58 @@ background: #eee;
 }
 
 .list-group-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .list-group-item img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.add_comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.add_comment .m-2 {
+    border: black solid 5px;
+    border-radius: 15px;
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.form-group textarea {
+    width: 410px;
+}
+
+.form-text {
+    margin-left: 50px;
+    width: 270px;
+}
+
+.post_info {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.not_image_p {
+    margin-top: 30px;
+}
+
+.description {
+     margin-left: 45px;
 }
