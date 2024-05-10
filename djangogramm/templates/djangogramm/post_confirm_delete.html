@@ -1,15 +1,18 @@
 {% extends 'djangogramm/base.html' %}
 
 {% block content %}
-<h2>Delete Post</h2>
+<main class="main-delete">
+    <div class="post-delete">
+        <h2 class="title-delete">Delete Post</h2>
 
-<form method="POST">
-  {% csrf_token %}
-  <p>Are you sure that you want to delete the post "{{post.title}}"?</p>
-  <div>
-    <button type="submit">Yes, Delete</button>
-    <a href="{% url 'profile' username=post.user_id %}">Cancel</a>
-  </div>
-</form>
-
+        <form method="POST">
+            {% csrf_token %}
+            <p class="text-delete">Are you sure that you want to delete the post <br> "{{post.title}}"?</p>
+            <div>
+                <button class="btn-delete" type="submit">Yes, Delete</button>
+                <a class="cancel-delete" href="{% url 'profile' username=post.user_id %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</main>
 {% endblock content %}
