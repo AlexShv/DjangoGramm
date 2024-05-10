@@ -2,12 +2,14 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<main class="add_comment">
 	<form class="m-2" method="post" novalidate>
 		<h2>Add comment</h2>
 		{% csrf_token %}
-		<div class="form-group col-md-6 mb-0">
+		<div class="form-group col-md-6 mb-0 description">
         	{{ form.description|as_crispy_field }}
 		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-secondary" style="width: 170px;">Submit</button>
 	</form>
+</main>
 {% endblock %}
