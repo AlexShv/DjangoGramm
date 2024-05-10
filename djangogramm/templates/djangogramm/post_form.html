@@ -10,7 +10,7 @@
                         <div class="card-body text-center">
                             <h2 class="fw-bold mb-2 text-uppercase">Create/Update Post</h2>
                             <p class="text-white-50 mb-5">Please, enter your post information</p>
-                            <form class="form-with-margin my-custom-form" method="post" enctype="multipart/form-data">
+                            <form class="form-with-margin my-custom-form form-post-label" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 {{ form.title|as_crispy_field }}
                                 {{ form.content|as_crispy_field }}
@@ -25,3 +25,4 @@
         </div>
     </section>
 {% endblock %}
+
