@@ -17,7 +17,7 @@ The application has been covered by unittests
 ## Installing
 1. Clone the repository:
    ```bash
-   https://github.com/AlexShv/DjangoGramm.git
+   git clone https://github.com/AlexShv/DjangoGramm.git
    ```
 2. Create and activate your virtual environment:
    - for Linux\macOS
